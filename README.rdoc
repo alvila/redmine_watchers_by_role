@@ -1,0 +1,7 @@
+= Redmine Select Watchers By Role Plugin
+
+Allows issue creator to select multiple watchers by role assigment
+
+= Install
+
+script/plugin install git://github.com/alvila/redmine_watchers_by_role.git
