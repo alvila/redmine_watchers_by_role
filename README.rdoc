@@ -5,3 +5,7 @@ Allows issue creator to select multiple watchers by role assigment
 = Install
 
 script/plugin install git://github.com/alvila/redmine_watchers_by_role.git
+
+= Usage
+
+Adds new permission into the roles settings, Display in selection, when enabled and with some users in the role, it shows in the list on the New Issue tab.
