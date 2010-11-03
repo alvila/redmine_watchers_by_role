@@ -7,7 +7,7 @@ module Redmine_watchers_by_role
       return '' unless action_name
       return '' unless action_name=="new"
       context[:controller].send(:render_to_string, {
-          :partial => 'watchers/multiselect',
+          :partial => 'watchers/multiselect_role',
           :locals => context
         })
     end

@@ -16,7 +16,7 @@ function uncheckAll(name)
 
 function checkSome(name)
 {
-    var selected_values=document.getElementById('watcher_multiple').options[document.getElementById('watcher_multiple').selectedIndex].value.split(',');
+    var selected_values=document.getElementById('watcher_multiple_role').options[document.getElementById('watcher_multiple_role').selectedIndex].value.split(',');
     boxes=document.getElementsByName(name)
     for (i = 0; i < boxes.length; i++){
         for (j = 0; j < selected_values.length; j++){
@@ -28,7 +28,7 @@ function checkSome(name)
 
 function uncheckSome(name)
 {
-    var selected_values=document.getElementById('watcher_multiple').options[document.getElementById('watcher_multiple').selectedIndex].value.split(',');
+    var selected_values=document.getElementById('watcher_multiple_role').options[document.getElementById('watcher_multiple_role').selectedIndex].value.split(',');
     boxes=document.getElementsByName(name)
     for (i = 0; i < boxes.length; i++){
         for (j = 0; j < selected_values.length; j++){
