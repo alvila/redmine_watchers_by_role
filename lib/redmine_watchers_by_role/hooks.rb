@@ -1,4 +1,4 @@
-module Redmine_watchers_by_role
+module RedmineWatchersByRole
   class Hooks < Redmine::Hook::ViewListener
     def view_issues_form_details_bottom(context={ })
       controller = context[:controller]
