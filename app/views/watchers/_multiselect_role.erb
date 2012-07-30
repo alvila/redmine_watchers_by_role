@@ -1,21 +1,18 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
 <p>
 <%= l(:watchers_select_multiple) %>
 <%
 roles=""
 @project.users_by_role.sort{|a,b| a[0][:name]<=>b[0][:name]}.each do |item|
-key=item[0]
-value=item[1]
-next unless key[:permissions].include?(:display_in_selection)
-values=Array.new
-value.each do |user|
-values+=[user[:id]]
+  key=item[0]
+  value=item[1]
+  next unless key[:permissions].include?(:display_in_selection)
+  values=Array.new
+    value.each do |user|
+    values+=[user[:id]]
+  end
+  roles+="<option value=\"#{values.join(',')}\">#{key[:name]}</option>"
 end
-roles+="<option value=\"#{values.join(',')}\">#{key[:name]}</option>"
-end %>
+%>
 <%= select_tag(:watcher_multiple_role, roles)
 %>
   <input type="submit" value="Select" onclick="return checkSome('issue[watcher_user_ids][]')" /> |
