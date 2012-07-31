@@ -14,10 +14,10 @@
       end
     %>
     <%= select_tag(:watcher_multiple_role, roles.html_safe) %>
-    <input type="button" value="Select" onclick="return watchersCheckSome('issue[watcher_user_ids][]')" /> |
-    <input type="button" value="Unselect" onclick="return watchersUncheckSome('issue[watcher_user_ids][]')" /> |
-    <input type="button" value="Select All" onclick="return watchersCheckAll('issue[watcher_user_ids][]')" /> |
-    <input type="button" value="Unselect All" onclick="return watchersUncheckAll('issue[watcher_user_ids][]')" />
+    <input type="button" value="<%= l(:label_select) %>" onclick="return watchersCheckSome('issue[watcher_user_ids][]')" /> |
+    <input type="button" value="<%= l(:label_unselect) %>" onclick="return watchersUncheckSome('issue[watcher_user_ids][]')" /> |
+    <input type="button" value="<%= l(:label_select_all) %>" onclick="return watchersCheckAll('issue[watcher_user_ids][]')" /> |
+    <input type="button" value="<%= l(:label_unselect_all) %>" onclick="return watchersUncheckAll('issue[watcher_user_ids][]')" />
   </p>
 
   <% content_for :header_tags do %>

@@ -1,2 +1,6 @@
 fr:
   watchers_select_multiple: "Sélectionner plusieurs observateurs: "
+  label_select: "Sélectionner"
+  label_unselect: "Désélectionner"
+  label_select_all: "Sélectionner tous"
+  label_unselect_all: "Désélectionner tous"

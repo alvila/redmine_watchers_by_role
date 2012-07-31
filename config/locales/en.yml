@@ -1,2 +1,6 @@
 en:
   watchers_select_multiple: "Select multiple watchers: "
+  label_select: "Select"
+  label_unselect: "Unselect"
+  label_select_all: "Select all"
+  label_unselect_all: "Unselect all"
