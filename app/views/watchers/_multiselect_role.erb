@@ -8,13 +8,12 @@ roles=""
   next unless key[:permissions].include?(:display_in_selection)
   values=Array.new
     value.each do |user|
-    values+=[user[:id]]
+    values+=[user[:id].to_i]
   end
-  roles+="<option value=\"#{values.join(',')}\">#{key[:name]}</option>"
+  roles+="<option value=\"#{values.join(',')}\">#{h key[:name]}</option>"
 end
 %>
-<%= select_tag(:watcher_multiple_role, roles)
-%>
+  <%= select_tag(:watcher_multiple_role, roles.html_safe) %>
   <input type="submit" value="Select" onclick="return checkSome('issue[watcher_user_ids][]')" /> |
   <input type="submit" value="Unselect" onclick="return uncheckSome('issue[watcher_user_ids][]')" /> |
   <input type="submit" value="Select All" onclick="return checkAll('issue[watcher_user_ids][]')" /> |
