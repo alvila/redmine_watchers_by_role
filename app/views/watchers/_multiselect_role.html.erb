@@ -1,0 +1,26 @@
+<% if controller.action_name == 'new' %>
+  <p>
+    <%= l(:watchers_select_multiple) %>
+    <%
+      roles=""
+      @project.users_by_role.sort{|a,b| a[0][:name]<=>b[0][:name]}.each do |item|
+        key=item[0]
+        value=item[1]
+        values=Array.new
+          value.each do |user|
+          values+=[user[:id].to_i]
+        end
+        roles+="<option value=\"#{values.join(',')}\">#{h key[:name]}</option>"
+      end
+    %>
+    <%= select_tag(:watcher_multiple_role, roles.html_safe) %>
+    <input type="button" value="<%= l(:label_select) %>" onclick="return watchersCheckSome('issue[watcher_user_ids][]')" /> |
+    <input type="button" value="<%= l(:label_unselect) %>" onclick="return watchersUncheckSome('issue[watcher_user_ids][]')" /> |
+    <input type="button" value="<%= l(:label_select_all) %>" onclick="return watchersCheckAll('issue[watcher_user_ids][]')" /> |
+    <input type="button" value="<%= l(:label_unselect_all) %>" onclick="return watchersUncheckAll('issue[watcher_user_ids][]')" />
+  </p>
+
+  <% content_for :header_tags do %>
+    <%= javascript_include_tag "watchers_multisel.js", :plugin => 'redmine_watchers_by_role' %>
+  <% end %>
+<% end %>
