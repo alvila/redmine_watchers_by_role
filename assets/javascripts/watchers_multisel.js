@@ -9,21 +9,21 @@ function $N(element) {
   return Element.extend(element);
 }
 
-function checkAll(name) {
+function watchersCheckAll(name) {
   boxes = $N(name)
   for (i = 0; i < boxes.length; i++)
     boxes[i].checked = true;
   return false;
 }
 
-function uncheckAll(name) {
+function watchersUncheckAll(name) {
   boxes = $N(name)
   for (i = 0; i < boxes.length; i++)
     boxes[i].checked = false;
   return false;
 }
 
-function checkSome(name) {
+function watchersCheckSome(name) {
   var selected_values=$('watcher_multiple_role').options[$('watcher_multiple_role').selectedIndex].value.split(',');
   boxes = $N(name)
   for (i = 0; i < boxes.length; i++) {
@@ -34,7 +34,7 @@ function checkSome(name) {
   return false;
 }
 
-function uncheckSome(name) {
+function watchersUncheckSome(name) {
   var selected_values = $('watcher_multiple_role').options[$('watcher_multiple_role').selectedIndex].value.split(',');
   boxes = $N(name)
   for (i = 0; i < boxes.length; i++) {
